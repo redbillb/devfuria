@@ -9,8 +9,8 @@ def divisores(numero):
     return lista
 
 def ehPrimo(numero):
-    lista = divisores(numero)
-    if len(lista) == 2:
+    listaDeDivisores = divisores(numero)
+    if len(listaDeDivisores) == 2:
         return True
     else:
     	return False
