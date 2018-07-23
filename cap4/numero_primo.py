@@ -11,7 +11,9 @@ def divisores(numero):
 def ehPrimo(numero):
     lista = divisores(numero)
     if len(lista) == 2:
-        return lista
+        return True
+    else:
+    	return False
 
 #testes
 assert ehPrimo(2)
