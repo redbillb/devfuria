@@ -14,3 +14,4 @@ def soma(vetor):
 assert 60 == soma([10, 30, 5, 15, 0])
 assert 15 == soma([15, 0])
 assert 10 == soma([10])
+
