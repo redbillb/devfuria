@@ -5,34 +5,34 @@
 
 #processamento
 def menor(vetor):
-	menor = vetor[0]
-	indice = 1
+	indice = 0
+	imenor = 0
 	while indice < len(vetor):
-		if menor > vetor[indice]:
-			menor = vetor[indice]
+		if vetor[imenor] > vetor[indice]:
+			imenor = indice
 		indice += 1
-	return menor
+	return imenor
 
 def maior(vetor):
-	maior = vetor[0]
-	indice = 1
+	imaior = 0
+	indice = 0
 	while indice < len(vetor):
-		if maior < vetor[indice]:
-			maior = vetor[indice]
+		if vetor[imaior] < vetor[indice]:
+			imaior = indice
 		indice += 1
-	return maior
+	return imaior
 
 #testes
-assert 1 == menor([2,3,4,1])
-assert 1 == menor([1,2,3,4])
-assert 1 == menor([4,3,2,1])
-assert 2 == menor([3,2])
-assert 2 == menor([2])
-assert -3 == menor([2,-3,4,1])
+assert 3 == menor([2,3,4,1])
+assert 0 == menor([1,2,3,4])
+assert 3 == menor([4,3,2,1])
+assert 1 == menor([3,2])
+assert 0 == menor([2])
+assert 1 == menor([2,-3,4,1])
 
-assert 4 == maior([2,3,4,1])
-assert 4 == maior([1,2,3,4])
-assert 4 == maior([4,3,2,1])
-assert 3 == maior([3,2])
-assert 2 == maior([2])
-assert 4 == maior([2,-3,4,1])
+assert 2 == maior([2,3,4,1])
+assert 3 == maior([1,2,3,4])
+assert 0 == maior([4,3,2,1])
+assert 0 == maior([3,2])
+assert 0 == maior([2])
+assert 2 == maior([2,-3,4,1])
