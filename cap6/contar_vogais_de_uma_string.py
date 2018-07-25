@@ -4,7 +4,7 @@
 
 
 #processamento
-def contaVogais(string):
+def contarVogais(string):
 	resultado = 0
 	for caractere in string:
 		if caractere == 'a' or caractere == 'e' or caractere == 'i' or caractere == 'o' or caractere == 'u' or \
@@ -13,6 +13,6 @@ def contaVogais(string):
 	return resultado
 
 #testes
-assert 1 == contaVogais('Red')
-assert 2 == contaVogais('Red Bill')
-assert 0 == contaVogais('kkk')
+assert 1 == contarVogais('Red')
+assert 2 == contarVogais('Red Bill')
+assert 0 == contarVogais('kkk')
