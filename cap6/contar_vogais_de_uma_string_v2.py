@@ -5,7 +5,7 @@
 
 #processamento
 def contarVogais(string):
-	vogais = 'aeiou'
+	vogais = 'aeiouAEIOU'
 	resultado = 0
 	for caractere in string:
 		if caractere in vogais:
@@ -15,4 +15,5 @@ def contarVogais(string):
 #testes
 assert 1 == contarVogais('Red')
 assert 2 == contarVogais('Red Bill')
+assert 2 == contarVogais('RED BILL')
 assert 0 == contarVogais('kkk')
