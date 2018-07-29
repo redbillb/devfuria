@@ -3,6 +3,7 @@
 #imports
 
 
+#processamento
 def inverterString(string):
     resultado = ""
     contador = 0
