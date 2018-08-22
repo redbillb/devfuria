@@ -7,48 +7,51 @@ class Submarino:
 		self.Y = 0
 		self.Z = 0
 		self.direcao = 'NORTE'
-		self.indiceDirecoes = 0
+		self.__indiceDirecoes = 0
 
 	def retornaPosicaoFinal(self,comandos):
 		self.__init__()
 
 		for caractere in comandos:
 			if caractere in ['R','L']:
-				self.calculaDirecao(caractere)
+				self.__calculaDirecao(caractere)
 
-			if caractere in ['U','D']:
-				self.calcuDeslocamentoZ(caractere)
+			elif caractere in ['U','D']:
+				self.__calcuDeslocamentoZ(caractere)
 
-			if caractere == 'M':
-				self.calculaAvanco()
+			elif caractere == 'M':
+				self.__calculaAvanco()
+
+			else:
+				pass
 
 		return f'{self.X} {self.Y} {self.Z} {self.direcao}'
 
-	def calculaDirecao(self,caractere):
+	def __calculaDirecao(self,caractere):
 		direcoes=['NORTE','LESTE','SUL','OESTE']
 		
 		if caractere == 'L':
-			self.indiceDirecoes += 1
+			self.__indiceDirecoes += 1
 		
 		if caractere == 'R':
-			self.indiceDirecoes -= 1
+			self.__indiceDirecoes -= 1
 		
-		if self.indiceDirecoes == -1:
-			self.indiceDirecoes = 3
+		if self.__indiceDirecoes == -1:
+			self.__indiceDirecoes = 3
 
-		if self.indiceDirecoes == 4:
-			self.indiceDirecoes = 0
+		if self.__indiceDirecoes == 4:
+			self.__indiceDirecoes = 0
 		
-		self.direcao = direcoes[self.indiceDirecoes]
+		self.direcao = direcoes[self.__indiceDirecoes]
 			
-	def calcuDeslocamentoZ(self,caractere):
+	def __calcuDeslocamentoZ(self,caractere):
 		if caractere == 'U':
 			self.Z += 1
 		
 		if caractere == 'D':
 			self.Z -= 1
 		
-	def calculaAvanco(self):
+	def __calculaAvanco(self):
 		if self.direcao == 'NORTE':
 			self.Y += 1
 		
@@ -66,6 +69,7 @@ class Submarino:
 
 submarino = Submarino()
 assert '0 0 0 NORTE' == submarino.retornaPosicaoFinal('')
+assert '0 0 0 NORTE' == submarino.retornaPosicaoFinal('a')
 assert '0 0 0 LESTE' == submarino.retornaPosicaoFinal('L')
 assert '0 0 0 OESTE' == submarino.retornaPosicaoFinal('R')
 assert '0 0 1 NORTE' == submarino.retornaPosicaoFinal('U')
