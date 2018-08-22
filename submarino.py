@@ -7,7 +7,6 @@ class Submarino:
 		self.Y = 0
 		self.Z = 0
 		self.direcao = 'NORTE'
-		self.__indiceDirecoes = 0
 
 	def retornaPosicaoFinal(self,comandos):
 		self.__init__()
@@ -30,19 +29,23 @@ class Submarino:
 	def __calculaDirecao(self,caractere):
 		direcoes=['NORTE','LESTE','SUL','OESTE']
 		
+		for indice in range(len(direcoes)):
+			if self.direcao == direcoes[indice]:
+				indiceDirecoes = indice
+
 		if caractere == 'L':
-			self.__indiceDirecoes += 1
+			indiceDirecoes += 1
 		
 		if caractere == 'R':
-			self.__indiceDirecoes -= 1
+			indiceDirecoes -= 1
 		
-		if self.__indiceDirecoes == -1:
-			self.__indiceDirecoes = 3
+		if indiceDirecoes == -1:
+			indiceDirecoes = 3
 
-		if self.__indiceDirecoes == 4:
-			self.__indiceDirecoes = 0
+		if indiceDirecoes == 4:
+			indiceDirecoes = 0
 		
-		self.direcao = direcoes[self.__indiceDirecoes]
+		self.direcao = direcoes[indiceDirecoes]
 			
 	def __calcuDeslocamentoZ(self,caractere):
 		if caractere == 'U':
