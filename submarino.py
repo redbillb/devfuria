@@ -25,7 +25,6 @@ class Submarino:
 				if caractere == 'M':
 					self.calculaAvanco()
 
-			print (f'{self.X} {self.Y} {self.Z} {self.direcao}')
 			return f'{self.X} {self.Y} {self.Z} {self.direcao}'
 
 	def calculaDirecao(self,caractere):
