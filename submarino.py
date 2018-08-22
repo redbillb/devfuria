@@ -12,20 +12,18 @@ class Submarino:
 
 	def retornaPosicaoFinal(self,comandos):
 		self.__init__()
-		if comandos == '':
-			return f'{self.X} {self.Y} {self.Z} {self.direcao}'
-		else:
-			for caractere in comandos:
-				if caractere in ['R','L']:
-					self.calculaDirecao(caractere)
 
-				if caractere in ['U','D']:
-					self.calcuDeslocamentoZ(caractere)
+		for caractere in comandos:
+			if caractere in ['R','L']:
+				self.calculaDirecao(caractere)
 
-				if caractere == 'M':
-					self.calculaAvanco()
+			if caractere in ['U','D']:
+				self.calcuDeslocamentoZ(caractere)
 
-			return f'{self.X} {self.Y} {self.Z} {self.direcao}'
+			if caractere == 'M':
+				self.calculaAvanco()
+
+		return f'{self.X} {self.Y} {self.Z} {self.direcao}'
 
 	def calculaDirecao(self,caractere):
 		if caractere == 'L':
