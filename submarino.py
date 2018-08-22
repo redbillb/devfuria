@@ -1,12 +1,6 @@
 # -*- coding: utf-8 -*-
 
-#imports
-
-
-#processamento
 class Submarino:
-	
-	
 
 	def __init__(self, X=0, Y=0, Z=0):
 		self.X = X
@@ -19,10 +13,8 @@ class Submarino:
 	def retornaPosicaoFinal(self,comandos):
 		self.__init__()
 		if comandos == '':
-			#print ('aqui 1')
 			return f'{self.X} {self.Y} {self.Z} {self.direcao}'
 		else:
-			#print (self.indiceDirecoes)
 			for caractere in comandos:
 				if caractere in ['R','L']:
 					self.calculaDirecao(caractere)
@@ -35,29 +27,24 @@ class Submarino:
 
 			print (f'{self.X} {self.Y} {self.Z} {self.direcao}')
 			return f'{self.X} {self.Y} {self.Z} {self.direcao}'
-		#return '2 3 -2 SUL'
 
 	def calculaDirecao(self,caractere):
 		if caractere == 'L':
-			#print ('aqui 3')
 			self.indiceDirecoes += 1
 		
 		if caractere == 'R':
 			self.indiceDirecoes -= 1
 		
 		if self.indiceDirecoes == -1:
-			#print ('aqui 4')
 			self.indiceDirecoes = 3
 
 		if self.indiceDirecoes == 4:
-			#print ('aqui 4')
 			self.indiceDirecoes = 0
 		
 		self.direcao = self.direcoes[self.indiceDirecoes]
 			
 	def calcuDeslocamentoZ(self,caractere):
 		if caractere == 'U':
-			#print ('aqui 3')
 			self.Z += 1
 		
 		if caractere == 'D':
@@ -75,7 +62,6 @@ class Submarino:
 		
 		if self.direcao == 'OESTE':
 			self.X += 1
-
 
 #testes
 #OBS: a cada teste a posição volta a ser a inicial
