@@ -11,14 +11,13 @@ class Triangulo(object):
 
 
 	def ehTriangulo(self):
-		if self.lado1 > self.lado2 + self.lado3:
-			return False
-		elif self.lado2 > self.lado1 + self.lado3:
-			return False
-		elif self.lado3 > self.lado1 + self.lado1:
-			return False
+		if self.lado1 < self.lado2 + self.lado3:
+			if self.lado2 < self.lado1 + self.lado3:
+				if self.lado3 < self.lado1 + self.lado1:
+					return True
 		else:
 			return True
+
 
 class testeTriangulo(unittest.TestCase):
 
