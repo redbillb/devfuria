@@ -20,7 +20,7 @@ class testeAreas(unittest.TestCase):
 	area = Area()
 
 	def testeAreaQuadrada(self):
-		self.assertEqual(16,self.area.areaQuadrada(4,4))
+		self.assertEqual(16,area.areaQuadrada(4,4))
 		self.assertEqual(25,self.area.areaQuadrada(5,5))
 		self.assertNotEqual(17,self.area.areaQuadrada(4,3))
 
