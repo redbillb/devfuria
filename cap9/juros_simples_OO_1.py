@@ -8,8 +8,6 @@ class Juros(object):
 	pass
 
 
-
-
 #Testes
 class TestaJuros(unittest.TestCase):
 
