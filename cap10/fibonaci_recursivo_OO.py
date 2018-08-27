@@ -4,18 +4,9 @@
 import unittest
 
 def calculaFibonaci(numero):
-        lista = []
-        indice = -1
-        while indice < numero:
-            indice += 1
-            if indice == 0:
-                lista.append(indice)
-            elif indice == 1:
-                lista.append(indice)
-            else:
-                lista.append(lista[indice-1]+lista[indice-2])
-                
-        return lista[numero]
+    if numero < 2:
+        return numero
+    return calculaFibonaci(numero - 1) + calculaFibonaci(numero - 2)
 
 #testes
 class TestaRecursao(unittest.TestCase):
