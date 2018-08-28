@@ -6,22 +6,21 @@ import unittest
 #processamento
 class Multiplos(object):
 	
-	def ehMultiploDe5(self,numero):
-		if numero % 5 == 0:
+	def ehMultiplo(self,numero,multiplo):
+		if numero % multiplo == 0:
 			return True
-		else:
-			return False
+		return False
 
-	def ehMultiploDe3(self,numero):
-		if numero % 3 == 0:
-			return True
-		else:
-			return False
+	# def ehMultiploDe3(self,numero):
+	# 	if numero % 3 == 0:
+	# 		return True
+	# 	else:
+	# 		return False
 
 	def somaMultiplosDe_3_5(self,numero):
 		resultado = 0
 		for num in range(numero):
-			if self.ehMultiploDe5(num) or self.ehMultiploDe3(num):
+			if self.ehMultiplo(num,3) or self.ehMultiplo(num,5):
 				resultado += num
 		return resultado
 
@@ -32,14 +31,14 @@ multiplos = Multiplos()
 class TestaMultiplos(unittest.TestCase):
 
 	def testaEhMultiplode5(self):
-		self.assertTrue(multiplos.ehMultiploDe5(5))
-		self.assertTrue(multiplos.ehMultiploDe5(10))
-		self.assertTrue(multiplos.ehMultiploDe5(15))
+		self.assertTrue(multiplos.ehMultiplo(5,5))
+		self.assertTrue(multiplos.ehMultiplo(10,5))
+		self.assertTrue(multiplos.ehMultiplo(15,5))
 
 	def testaEhMultiploDe3(self):
-		self.assertTrue(multiplos.ehMultiploDe3(3))
-		self.assertTrue(multiplos.ehMultiploDe3(6))
-		self.assertTrue(multiplos.ehMultiploDe3(15))
+		self.assertTrue(multiplos.ehMultiplo(3,3))
+		self.assertTrue(multiplos.ehMultiplo(6,3))
+		self.assertTrue(multiplos.ehMultiplo(15,3))
 
 	def testaSomaMultiplosDe_3_5(self):
 		self.assertEqual(23,multiplos.somaMultiplosDe_3_5(10))
