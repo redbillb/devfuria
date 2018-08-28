@@ -5,10 +5,12 @@ import unittest
 
 #processamento
 def bubbleSort(lista):
-	
+	qtd = len(lista) - 1
 	for ciclos in range(len(lista) - 1):
-		for indice in range(len(lista) - 1):
+		for indice in range(qtd):
 			if lista[indice] > lista[indice + 1]:
+				if indice + 1 == qtd:
+					qtd -= 1
 				lista[indice], lista[indice + 1] = lista[indice + 1], lista[indice]
 	return lista
 
