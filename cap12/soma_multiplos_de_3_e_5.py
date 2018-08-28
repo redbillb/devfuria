@@ -11,12 +11,6 @@ class Multiplos(object):
 			return True
 		return False
 
-	# def ehMultiploDe3(self,numero):
-	# 	if numero % 3 == 0:
-	# 		return True
-	# 	else:
-	# 		return False
-
 	def somaMultiplosDe_3_5(self,numero):
 		resultado = 0
 		for num in range(numero):
@@ -42,6 +36,9 @@ class TestaMultiplos(unittest.TestCase):
 
 	def testaSomaMultiplosDe_3_5(self):
 		self.assertEqual(23,multiplos.somaMultiplosDe_3_5(10))
+		self.assertEqual(78,multiplos.somaMultiplosDe_3_5(20))
+
+	print (multiplos.somaMultiplosDe_3_5(1000))
 
 if __name__ == '__main__':
 	unittest.main()

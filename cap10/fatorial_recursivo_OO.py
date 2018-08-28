@@ -22,7 +22,5 @@ class TestaRecursividade(unittest.TestCase):
 		self.assertEqual(24,calculaFatorial(4))
 		self.assertNotEqual(2,calculaFatorial(1))
 
-
-
 if __name__ == '__main__':
 	unittest.main()
